@@ -53,3 +53,72 @@ dkms.conf
 
 # debug information files
 *.dwo
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+*.egg
+*.egg-info/
+dist/
+build/
+.Python
+develop-eggs/
+downloads/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.pyc
+*.pyo
+*.pyd
+.installed.cfg
+*.egg
+
+# Virtual environments
+.venv
+venv/
+ENV/
+env/
+.env
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Testing
+.pytest_cache/
+.coverage
+.coverage.*
+coverage.xml
+*.cover
+.hypothesis/
+.tox/
+
+# Others
+.mypy_cache/
+.dmypy.json
+dmypy.json
+
+# data
+*.csv
+*.tsv
+*.xml
+*.dat
+
+# image
+*.jpg
+*.jpeg
+*.png
+*.bmp
+*.gif
+*.svg
+
+# video
+*.mp4
