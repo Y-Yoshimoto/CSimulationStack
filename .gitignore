@@ -36,6 +36,10 @@
 *.x86_64
 *.hex
 
+# Build outputs (project-specific)
+src/queuing_models/mcmc_poisson/c_impl/poisson_demo
+src/queuing_models/mcmc_poisson/benchmark/benchmark_c
+
 # Debug files
 *.dSYM/
 *.su
