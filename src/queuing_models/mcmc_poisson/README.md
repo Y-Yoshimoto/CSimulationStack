@@ -1,19 +1,19 @@
-# mcmc_poisson – Poisson Sampler for Queuing Models
+# mcmc_poisson – 待ち行列モデル向けポアソンサンプラー
 
-MCMC simulation foundation using Poisson distribution sampling for queuing models.
+待ち行列モデルのマルコフ連鎖モンテカルロ（MCMC）シミュレーション基盤です。ポアソン分布サンプリングを使用します。
 
-## Directory Structure
+## ディレクトリ構成
 
 ```
 mcmc_poisson/
-├── c_impl/          # C implementation (Knuth's algorithm)
-├── python_impl/     # Python implementation (NumPy)
-└── benchmark/       # Benchmark comparison (C and Python)
+├── c_impl/          # C言語実装（Knuth法）
+├── python_impl/     # Python実装（NumPy）
+└── benchmark/       # C言語版とPython版のベンチマーク比較
 ```
 
-## Quick Start
+## クイックスタート
 
-### C Implementation
+### C言語実装
 
 ```bash
 cd c_impl
@@ -21,7 +21,7 @@ make
 ./poisson_demo
 ```
 
-### Python Implementation
+### Python実装
 
 ```bash
 pip install numpy
@@ -29,9 +29,9 @@ cd python_impl
 python3 main.py
 ```
 
-### Benchmarks
+### ベンチマーク
 
-**C benchmark:**
+**C言語版ベンチマーク:**
 
 ```bash
 cd benchmark
@@ -39,26 +39,26 @@ make
 ./benchmark_c
 ```
 
-**Python benchmark:**
+**Python版ベンチマーク:**
 
 ```bash
 cd benchmark
 python3 benchmark.py
 ```
 
-## Algorithm
+## アルゴリズム
 
-The C implementation uses **Knuth's algorithm** for Poisson sampling:
+C言語実装では、ポアソン分布サンプリングに **Knuth法** を使用しています。
 
-1. Compute `L = exp(-λ)`
-2. Set `k = 0`, `p = 1`
-3. Generate uniform random `U` in `(0, 1]`
-4. `p = p * U`
-5. If `p < L`, return `k`; otherwise `k++` and go to step 3
+1. `L = exp(-λ)` を計算する
+2. `k = 0`、`p = 1` を初期化する
+3. `(0, 1]` の範囲で一様乱数 `U` を生成する
+4. `p = p * U` を計算する
+5. `p < L` ならば `k` を返す。そうでなければ `k++` してステップ3へ戻る
 
-The Python implementation uses `numpy.random.Generator.poisson()`, which is
-equivalent in distribution and highly optimised for batch (vectorised) sampling.
+Python実装では `numpy.random.Generator.poisson()` を使用します。  
+分布として等価であり、バッチ（ベクトル化）サンプリングに高度に最適化されています。
 
-## Intended Lambda Range
+## λ値の想定範囲
 
-λ = 0 – 2 (suitable for queuing model arrival/service rates).
+λ = 0 ～ 2（待ち行列モデルの到着率・サービス率に適した範囲）
