@@ -1,0 +1,36 @@
+[project]
+name = "c_python_simulation_stack"
+version = "0.1.0"
+description = "C/Pythonシミュレーションスタック"
+readme = "README.md"
+requires-python = ">=3.14"
+dependencies = [
+    # 共通ライブラリ
+    "httpx",
+    "datetime",
+    "python-dotenv",
+    "itsdangerous",
+    # データ処理/分析
+    "numpy",
+    "pandas",
+    "scipy",
+    "matplotlib",
+]
+[dependency-groups]
+dev = [
+    # 開発用ツール群
+    "jinja2",
+    "lizard",
+    "ruff",
+    # Pytest: テストツール群
+    "pytest",
+    "pytest-cov",
+    "pytest-asyncio",
+    "pytest-html",
+    "pytest-check",
+]
+[tool.ruff]
+
+ignore = [
+    "E402", # E402: Module level import not at top of file
+]
