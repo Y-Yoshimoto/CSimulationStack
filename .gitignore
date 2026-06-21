@@ -126,3 +126,6 @@ dmypy.json
 
 # video
 *.mp4
+
+# metadata
+.DS_Store
