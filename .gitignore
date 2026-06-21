@@ -129,3 +129,7 @@ dmypy.json
 
 # metadata
 .DS_Store
+
+# executable
+src/mcmc_queuing_models/c_impl/poisson_demo
+src/mcmc_queuing_models/benchmark/benchmark_c
