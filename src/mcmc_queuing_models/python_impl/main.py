@@ -31,16 +31,12 @@ def main() -> None:
         simulation = WaitingTaskSimulation(
             p_lambda=lam,
             set_of_cycles=SET_OF_CYCLES,
-            num_samples_set=NUM_SAMPLES_SET,
             seed=SEED
         )
-
-        # サンプルの生成
-        # samples = simulation._generate_poisson_samples(NUM_RANDOM)
-
-        # ヒストグラムの描画
-        # render_histogram(samples, lam)
-
+        # シミュレーションの実行
+        results = simulation.run_simulation(NUM_SAMPLES_SET)
+        # 結果の表示
+        print(f"Lambda: {lam}, Results: {results}")
 
 if __name__ == "__main__":
     main()
