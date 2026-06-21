@@ -131,5 +131,5 @@ dmypy.json
 .DS_Store
 
 # executable
-src/mcmc_queuing_models/c_impl/poisson_demo
-src/mcmc_queuing_models/benchmark/benchmark_c
+src/mcmc_queuing_models/poisson_generation/c_impl/poisson_demo
+src/mcmc_queuing_models/poisson_generation/benchmark/benchmark_c
